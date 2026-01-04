@@ -1,6 +1,6 @@
 # ONNX-Impl-NumPy
 
-ONNXオペレータをNumPyで実装したリファレンス実装集です。各オペレータはONNX仕様に準拠し、NumPyで同等の計算を行います。
+ONNXオペレータをNumPyで実装したリファレンス実装集です。各オペレータはONNX仕様に準拠し、純粋なNumPyで同等の計算を行います。
 
 ## 📁 プロジェクト構造
 
@@ -8,7 +8,7 @@ ONNXオペレータをNumPyで実装したリファレンス実装集です。�
 ONNX-Impl-NumPy/
 ├── README.md                    # このファイル
 ├── onnx_operater.md            # オペレータ一覧（リンク付き）
-└── python/                     # 実装ファイル
+└── numpy/                     # 実装ファイル
     ├── 01_*.py                 # 数学演算 (10個)
     ├── 02_*.py                 # テンソル操作 (11個)
     ├── 03_*.py                 # ニューラルネットワーク層 (8個)
@@ -63,7 +63,7 @@ ReverseSequence
 
 ```python
 # Add オペレータの例
-from python.01_add import add
+from numpy.01_add import add
 import numpy as np
 
 A = np.array([[1, 2], [3, 4]])
@@ -81,11 +81,11 @@ print(C)
 
 ```bash
 # 個別のオペレータをテスト
-python python/01_add.py
+python numpy/01_add.py
 
 # 複数のオペレータをテスト
-python python/04_relu.py
-python python/03_conv.py
+python numpy/04_relu.py
+python numpy/03_conv.py
 ```
 
 ## 📦 必要な依存関係
