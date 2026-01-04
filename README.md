@@ -8,7 +8,8 @@ ONNXオペレータをNumPyで実装したリファレンス実装集です。�
 ONNX-Impl-NumPy/
 ├── README.md                    # このファイル
 ├── onnx_operater.md            # オペレータ一覧（リンク付き）
-└── numpy/                     # 実装ファイル
+├── requirements.txt            # 依存パッケージ
+└── numpy/                      # 実装ファイル
     ├── 01_*.py                 # 数学演算 (10個)
     ├── 02_*.py                 # テンソル操作 (11個)
     ├── 03_*.py                 # ニューラルネットワーク層 (8個)
@@ -90,14 +91,29 @@ python numpy/03_conv.py
 
 ## 📦 必要な依存関係
 
-- Python 3.6+
+- Python 3.8+
 - NumPy 1.19+
 - SciPy (Resizeオペレータで使用)
 
 ### インストール
 
+[uv](https://github.com/astral-sh/uv)を使用した高速インストール（推奨）：
+
 ```bash
-pip install numpy scipy
+# uvのインストール（未インストールの場合）
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# requirements.txtからインストール
+uv pip install -r requirements.txt
+
+# または直接指定
+uv pip install numpy scipy
+```
+
+従来のpipを使用する場合：
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## 💡 各ファイルの構成
